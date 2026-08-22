@@ -1,0 +1,10 @@
+python -c "
+import fitz
+from pathlib import Path
+for p in Path('data/pdfs').glob('*.pdf'):
+    doc = fitz.open(p)
+    text = doc[0].get_text().strip()[:50]
+    status = 'OK' if '%PDF' in open(p,'rb').read(4).decode('latin1') else 'STUB'
+    print(f'{status} | {p.name} | {doc.page_count} pages')
+    doc.close()
+"
