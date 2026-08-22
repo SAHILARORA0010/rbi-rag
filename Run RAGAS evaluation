@@ -1,0 +1,5 @@
+# Dev split (7 questions):
+python eval/ragas_eval.py --mode rag --split dev --save
+
+# Full eval (all 20 questions):
+python eval/ragas_eval.py --mode rag --split all --save
