@@ -1,0 +1,5 @@
+# After downloading new PDFs:
+python scripts/run_ingestion.py --skip-crawl
+
+# Full pipeline (crawl + ingest):
+python scripts/run_ingestion.py --limit 50
