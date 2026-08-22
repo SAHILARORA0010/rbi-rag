@@ -1,0 +1,2 @@
+rm -rf data/chroma_db
+python scripts/run_ingestion.py --skip-crawl
