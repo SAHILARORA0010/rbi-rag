@@ -1,0 +1,9 @@
+python -c "
+import chromadb
+client = chromadb.PersistentClient(path='data/chroma_db')
+col = client.get_collection('rbi_circulars')
+results = col.get(include=['metadatas'])
+print(f'Total chunks: {len(results[\"ids\"])}')
+for m in results['metadatas'][:5]:
+    print(m.get('circular_no','?'), '|', str(m.get('subject','?'))[:60])
+"
